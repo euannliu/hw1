@@ -138,10 +138,17 @@ int main(int argc, char *argv[])
 						break;
 					}
 				}
+				//deallocation
+				for(int counter=0;counter<num_buckets;counter++)
+				{
+					if(!bucket[counter].empty)
+					{
+						delete [] bucket[counter].content;
+					}
+				}
 			}
 		}
 	}
 	delete [] bucket;
-	cin.ignore();
 	return 0;
 }
